@@ -1,0 +1,11 @@
+C:\Users\david\Projects\MarkMyWords\Mark My Words\MarkMyWords\bin\Release\MarkMyWords.exe
+C:\Users\david\Projects\MarkMyWords\Mark My Words\MarkMyWords\bin\Release\MarkMyWords.pdb
+C:\Users\david\Projects\MarkMyWords\Mark My Words\MarkMyWords\bin\Release\MarkdownDeep.dll
+C:\Users\david\Projects\MarkMyWords\Mark My Words\MarkMyWords\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\david\Projects\MarkMyWords\Mark My Words\MarkMyWords\obj\x86\Release\MarkMyWords.frmAbout.resources
+C:\Users\david\Projects\MarkMyWords\Mark My Words\MarkMyWords\obj\x86\Release\MarkMyWords.frmMain.resources
+C:\Users\david\Projects\MarkMyWords\Mark My Words\MarkMyWords\obj\x86\Release\MarkMyWords.Properties.Resources.resources
+C:\Users\david\Projects\MarkMyWords\Mark My Words\MarkMyWords\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\david\Projects\MarkMyWords\Mark My Words\MarkMyWords\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\david\Projects\MarkMyWords\Mark My Words\MarkMyWords\obj\x86\Release\MarkMyWords.exe
+C:\Users\david\Projects\MarkMyWords\Mark My Words\MarkMyWords\obj\x86\Release\MarkMyWords.pdb
