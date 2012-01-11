@@ -36,7 +36,7 @@ namespace MarkMyWords
 
         private void frmAbout_Load(object sender, EventArgs e)
         {
-            lblVersion.Text = "v1.00";
+            lblVersion.Text = "v1.01";
         }
         
     }

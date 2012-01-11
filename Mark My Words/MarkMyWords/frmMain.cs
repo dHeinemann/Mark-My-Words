@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace MarkMyWords
@@ -8,13 +9,22 @@ namespace MarkMyWords
     {
         String fileName;
         DateTime latestWrite;
+        public Boolean jekyllMode = true;
+        System.Timers.Timer renderTimer = new System.Timers.Timer(500);
+
         public frmMain()
         {
             InitializeComponent();
+            renderTimer.Elapsed += new System.Timers.ElapsedEventHandler(renderPage);
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
+            if (renderTimer.Enabled == true)
+            {
+                stopTimer();
+            }
+
             OpenFileDialog browser = new OpenFileDialog();
 
             if (browser.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -23,14 +33,16 @@ namespace MarkMyWords
                 fileName = browser.FileName;
                 startTimer();
             }
-            btnBrowse.Enabled = false;
         }
 
         private void startTimer()
         {
-            System.Timers.Timer renderTimer = new System.Timers.Timer(500);
-            renderTimer.Elapsed += new System.Timers.ElapsedEventHandler(renderPage);
             renderTimer.Enabled = true;
+        }
+
+        private void stopTimer()
+        {
+            renderTimer.Enabled = false;
         }
 
         private void renderPage(object sender, System.Timers.ElapsedEventArgs e)
@@ -44,8 +56,18 @@ namespace MarkMyWords
                 md.SafeMode = false;
 
                 TextReader infile = new StreamReader(fileName);
-                String output = md.Transform(infile.ReadToEnd());
+                String input = infile.ReadToEnd();
                 infile.Close();
+
+                String output;
+                if (jekyllMode)
+                {
+                    output = md.Transform(Regex.Replace(input, @"---[\p{IsBasicLatin}]+---\r", ""));
+                }
+                else
+                {
+                    output = md.Transform(input);
+                }
                 webTargetPage.DocumentText = output;
             }
         }
@@ -54,6 +76,18 @@ namespace MarkMyWords
         {
             frmAbout about = new frmAbout();
             about.ShowDialog();
+        }
+
+        private void chkJekyllMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkJekyllMode.Checked == true)
+            {
+                jekyllMode = true;
+            }
+            else
+            {
+                jekyllMode = false;
+            }
         }
     }
 }

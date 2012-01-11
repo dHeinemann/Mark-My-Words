@@ -8,6 +8,11 @@ and re-render it if changes are found.
 
 ![Mark My Words][1]
 
+##Features
+* Automatically detects changes to and re-renders the open Markdown file
+* Jekyll mode - ignores Jekyll data such as title and layout (surrounded
+  by '---' marks).
+
 ##Download
 Installers for Mark My Words can be downloaded [here][2].
 

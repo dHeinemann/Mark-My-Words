@@ -1,0 +1,6 @@
+v1.01 2012-01-12
+* Added 'Jekyll Mode' - Leave it enabled to ignore Jekyll data like
+title and layout (surrounded by '---' marks).  Enabled by default.
+
+v1.00 2012-01-09
+* Initial release
